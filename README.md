@@ -6,7 +6,7 @@ It is built on a simple philosophy: predictability over magic, and compile-time 
 
 Krag is not just a syntactic sugar over C. It is a ground-up reimagining of how a compiler interacts with source code.
 
-'''luau
+```luau
 -- 1. Mutable Compile-Time State
 -- Evaluated strictly top-to-bottom during compilation. No rollback.
 static connection_id: integer = 0
@@ -23,7 +23,7 @@ syntax spawn [name: static word] [port: integer] {
     }
 }
 
-// Our runtime struct
+-- Our runtime struct
 typedata Connection(
     id: integer,
     port: integer,
@@ -33,4 +33,4 @@ typedata Connection(
 -- Using the macro:
 #spawn server_main 8080
 #spawn server_backup 9090
-'''
+```
