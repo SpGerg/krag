@@ -9,11 +9,11 @@ Krag is not just a syntactic sugar over C. It is a ground-up reimagining of how 
 ```luau
 -- 1. Mutable Compile-Time State
 -- Evaluated strictly top-to-bottom during compilation. No rollback.
-static connection_id: integer = 0
+meta connection_id: integer = 0
 
 -- 2. Custom Syntax (Zero-Cost Macros)
 -- Extends the language grammar and runs at compile-time.
-syntax spawn [name: static word] [port: integer] {
+syntax spawn [name: meta word] [port: integer] {
     connection_id = connection_id + 1
     const !name := Connection { 
         id = connection_id, 
