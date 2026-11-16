@@ -15,11 +15,11 @@ meta connection_id: integer = 0
 -- Extends the language grammar and runs at compile-time.
 syntax spawn [name: meta word] [port: integer] {
     connection_id = connection_id + 1
-    const !name := Connection { 
+    const !name := Connection (
         id = connection_id, 
         port = port, 
         timeout = 3.14 -- 3. Contextual Literal
-    }
+    )
 }
 
 -- Our runtime struct
